@@ -34,7 +34,10 @@ public class SpawnManager : MonoBehaviour
 
         if (enemyCount == 0)
         {
-
+            Instantiate(enemyPrefab, spawner1);
+            Instantiate(enemyPrefab, spawner2);
+            Instantiate(enemyPrefab, spawner3);
+            Instantiate(enemyPrefab, spawner4);
         }
     }
 }
