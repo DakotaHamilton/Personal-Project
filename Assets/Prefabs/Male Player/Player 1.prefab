@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1937198286239991723}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 3852533448801092017}
   m_Layer: 0
   m_Name: Beret
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 7530147456479742438}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 7246593292808886854}
   m_Layer: 0
   m_Name: Weapon Socket
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 393569625587510915}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -384,8 +384,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRb: {fileID: 0}
   speed: 1
-  tacticalRun: 2
-  rotationSpeed: 100
+  tacticalRun: 3
+  rotationSpeed: 200
 --- !u!114 &-2131485006017568762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,11 +398,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: add85657a5045e64daeaaa2f6812abaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 8071052617332053415, guid: b1aa7a3b67727ab488b198befa0dac89, type: 3}
   playerCamera: {fileID: 0}
   weaponPivot: {fileID: 7246593292808886854}
-  muzzle: {fileID: 0}
   bulletPrefab: {fileID: 5067349677646369789, guid: af9d7fb410bbc8b42a8019e2a3b903b9, type: 3}
+  assaultRifle: {fileID: -4567294947553008341, guid: 61dfad678fd80504ea4304b15c93e856, type: 3}
+  pistol: {fileID: -224346911086221532, guid: b1aa7a3b67727ab488b198befa0dac89, type: 3}
+  shotgun: {fileID: -4273817371130130398, guid: 2f9addfb26f31e0418a5672482512bdf, type: 3}
   bulletSpeed: 50
   fireRate: 0.5
 --- !u!65 &393569625587510915

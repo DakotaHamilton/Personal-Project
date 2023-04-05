@@ -18,11 +18,11 @@ public class DestroyOnCollision : MonoBehaviour
 
     public void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.CompareTag("Enemy"))
         {
             Destroy(other.gameObject);
         }
-        else if (other.gameObject.tag == "Level")
+        else if (other.gameObject.CompareTag("Level"))
         {
             Destroy(gameObject);
         }

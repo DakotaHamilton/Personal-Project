@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class ThirdPersonShooter : MonoBehaviour
 {
-    public GameObject weapon;
     public Camera playerCamera; // Camera Slot
-    public Transform weaponPivot; // Weapon Slot
-    public GameObject muzzle; // Muzzle Game Object
+    public Transform weaponPivot; // Weapon Socket
     public GameObject bulletPrefab; // Bullet Slot
-    private AssaultRifle assaultRifle;
-    private Pistol pistol;
-    private Shotgun shotgun;
+    public AssaultRifle assaultRifle; // Assault Rifle 
+    public Pistol pistol;
+    public Shotgun shotgun;
 
     [SerializeField] private float bulletSpeed;
     [SerializeField] private float fireRate;
@@ -22,8 +20,6 @@ public class ThirdPersonShooter : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-        weapon = pistol.pistol;
 
         Instantiate(pistol.pistol, weaponPivot);
     }
@@ -49,7 +45,7 @@ public class ThirdPersonShooter : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, weaponPivot.position, Quaternion.identity);
+        GameObject bullet = Instantiate(pistol.millimeterBullet, pistol.muzzle.position, Quaternion.identity);
         Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
         bulletRigidbody.velocity = playerCamera.transform.forward * bulletSpeed;
 
