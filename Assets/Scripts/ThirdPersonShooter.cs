@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ThirdPersonShooter : MonoBehaviour
@@ -7,11 +9,12 @@ public class ThirdPersonShooter : MonoBehaviour
     public Transform weaponPivot; // Weapon Slot
     public GameObject muzzle; // Muzzle Game Object
     public GameObject bulletPrefab; // Bullet Slot
-    public Animator anim; // Animator
+    private AssaultRifle assaultRifle;
+    private Pistol pistol;
+    private Shotgun shotgun;
 
-    [SerializeField] private float bulletSpeed = 20f;
-    [SerializeField] private float fireRate = 0.5f;
-    [SerializeField ]private float lookSensitivity = 5;
+    [SerializeField] private float bulletSpeed;
+    [SerializeField] private float fireRate;
 
     private float nextFireTime;
 
@@ -20,10 +23,9 @@ public class ThirdPersonShooter : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        Instantiate(weapon, weaponPivot);
+        weapon = pistol.pistol;
 
-        muzzle = GameObject.Find("Muzzle");
-        GameObject.FindGameObjectsWithTag("Muzzle");
+        Instantiate(pistol.pistol, weaponPivot);
     }
 
     // Update is called once per frame
@@ -50,13 +52,6 @@ public class ThirdPersonShooter : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, weaponPivot.position, Quaternion.identity);
         Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
         bulletRigidbody.velocity = playerCamera.transform.forward * bulletSpeed;
-    }
 
-    public void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            Rigidbody enemyRb = GetComponent<Rigidbody>();
-        }
     }
 }

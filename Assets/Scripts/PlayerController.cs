@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
        THE DIRECTION THE CHARACTER IS FACING IS DETERMINED BY THE CAMERA!
     */
 
-    Rigidbody playerRb;
+    public Rigidbody playerRb;
 
     // Start is called before the first frame update
     void Start()

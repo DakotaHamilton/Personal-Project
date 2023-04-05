@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5f2f4a079404c4694d514cac6808d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerRb: {fileID: 0}
   speed: 5
   tacticalRun: 10
   rotationSpeed: 150
@@ -64,11 +65,10 @@ MonoBehaviour:
   weapon: {fileID: 8071052617332053415, guid: b1aa7a3b67727ab488b198befa0dac89, type: 3}
   playerCamera: {fileID: 0}
   weaponPivot: {fileID: 7376784464358870511}
+  muzzle: {fileID: 0}
   bulletPrefab: {fileID: 5067349677646369789, guid: af9d7fb410bbc8b42a8019e2a3b903b9, type: 3}
-  anim: {fileID: 0}
   bulletSpeed: 20
   fireRate: 0.5
-  lookSensitivity: 5
 --- !u!1 &3020058594344989495
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,7 +352,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1f3ccf65df303f746b58151abdc3714a, type: 2}
+  - {fileID: 2100000, guid: a237fa5003931f44e8433671355a27b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

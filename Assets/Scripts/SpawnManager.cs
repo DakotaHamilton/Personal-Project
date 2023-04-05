@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public float speed = 1;
     public int enemyCount;
+    private int waveCount;
+    private Enemy enemy;
 
+    public float armatureSpeed;
     public GameObject enemyPrefab;
     public Transform spawner1;
     public Transform spawner2;
@@ -16,28 +18,32 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject Spawner1 = GameObject.Find("Spawner #1");
-        GameObject Spawner2 = GameObject.Find("Spawner #2");
-        GameObject Spawner3 = GameObject.Find("Spawner #3");
-        GameObject Spawner4 = GameObject.Find("Spawner #4");
-
-        Instantiate(enemyPrefab, spawner1);
-        Instantiate(enemyPrefab, spawner2);
-        Instantiate(enemyPrefab, spawner3);
-        Instantiate(enemyPrefab, spawner4);
+        waveCount = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
 
         if (enemyCount == 0)
         {
+            
+            SpawnEnemyWave(enemyCount);
             Instantiate(enemyPrefab, spawner1);
             Instantiate(enemyPrefab, spawner2);
             Instantiate(enemyPrefab, spawner3);
             Instantiate(enemyPrefab, spawner4);
+            waveCount++;
+            armatureSpeed += 1;
+        }
+    }
+    void SpawnEnemyWave(int enemiesToSpawn)
+    {
+        for (int i = 0; i < enemiesToSpawn; i++)
+        {
+           
         }
     }
 }

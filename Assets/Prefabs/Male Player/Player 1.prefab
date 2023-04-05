@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cfd6c4766005c25439eea543dcd07381, type: 2}
+  - {fileID: 2100000, guid: 04f064d006c4f3344b460bb4f70ebc05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -382,6 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5f2f4a079404c4694d514cac6808d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerRb: {fileID: 0}
   speed: 1
   tacticalRun: 2
   rotationSpeed: 100
@@ -402,10 +403,8 @@ MonoBehaviour:
   weaponPivot: {fileID: 7246593292808886854}
   muzzle: {fileID: 0}
   bulletPrefab: {fileID: 5067349677646369789, guid: af9d7fb410bbc8b42a8019e2a3b903b9, type: 3}
-  anim: {fileID: 0}
   bulletSpeed: 50
   fireRate: 0.5
-  lookSensitivity: 0
 --- !u!65 &393569625587510915
 BoxCollider:
   m_ObjectHideFlags: 0

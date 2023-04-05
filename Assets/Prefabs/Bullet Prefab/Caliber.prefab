@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5412636648618365201}
   - component: {fileID: 6365489304305420048}
+  - component: {fileID: -2685631969848572444}
   m_Layer: 0
   m_Name: Caliber
   m_TagString: Bullet
@@ -25,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3104633291340114218}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1240909, y: 0.0055, z: -1.7258953}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.7237, y: 1.7237, z: 3.5689209}
   m_Children:
   - {fileID: 7931933999419153594}
   m_Father: {fileID: 0}
@@ -48,6 +49,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-2685631969848572444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3104633291340114218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359c10e6dc6577848b3bdf59b5fedd54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7363500392421732928
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,7 +88,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7363500392421732928}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0366}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.011, y: 0.011, z: 0.015}
   m_Children: []
   m_Father: {fileID: 5412636648618365201}
