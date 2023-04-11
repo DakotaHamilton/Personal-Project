@@ -18,9 +18,9 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();
     }
 
-    [SerializeField] private float speed = 5; // Movement Speed
-    [SerializeField] private float tacticalRun = 10; // Tactical Run Speed
-    [SerializeField] private float rotationSpeed = 150; // Look Left and Right Speed
+    [SerializeField] private float speed; // Movement Speed
+    [SerializeField] private float tacticalRun; // Tactical Run Speed
+    [SerializeField] private float rotationSpeed; // Look Left and Right Speed
 
     // Update is called once per frame
     void Update()

@@ -11,6 +11,8 @@ public class ThirdPersonShooter : MonoBehaviour
     public Pistol pistol;
     public Shotgun shotgun;
 
+    private Transform Muzzle;
+
     [SerializeField] private float bulletSpeed;
     [SerializeField] private float fireRate;
 
@@ -20,8 +22,6 @@ public class ThirdPersonShooter : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-        Instantiate(pistol.pistol, weaponPivot);
     }
 
     // Update is called once per frame
@@ -36,6 +36,33 @@ public class ThirdPersonShooter : MonoBehaviour
             Cursor.visible = false;
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha1) && !GameObject.Find("AR - Militaria(Clone)"))
+        {
+            Destroy(GameObject.Find("HK VP9 9mm Pistol(Clone)"));
+            Destroy(GameObject.Find("Shotgun - FirePower(Clone)"));
+            Instantiate(assaultRifle, weaponPivot);
+            Muzzle = assaultRifle.muzzle;
+            bulletPrefab = assaultRifle.caliberBullets;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2) && !GameObject.Find("HK VP9 9mm Pistol(Clone)"))
+        {
+            Destroy(GameObject.Find("AR - Militaria(Clone)"));
+            Destroy(GameObject.Find("Shotgun - FirePower(Clone)"));
+            Instantiate(pistol, weaponPivot);
+            Muzzle = pistol.muzzle;
+            bulletPrefab = pistol.millimeterBullets;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3) && !GameObject.Find("Shotgun - FirePower(Clone)"))
+        {
+            Destroy(GameObject.Find("AR - Militaria(Clone)"));
+            Destroy(GameObject.Find("HK VP9 9mm Pistol(Clone)"));
+            Instantiate(shotgun.shotgun, weaponPivot);
+            Muzzle = shotgun.muzzle;
+            bulletPrefab = shotgun.shotgunPellets;
+        }
+
         if (Input.GetButton("Fire1") && Time.time >= nextFireTime)
         {
             nextFireTime = Time.time + fireRate;
@@ -45,7 +72,7 @@ public class ThirdPersonShooter : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject bullet = Instantiate(pistol.millimeterBullet, pistol.muzzle.position, Quaternion.identity);
+        GameObject bullet = Instantiate(bulletPrefab, Muzzle.position, Quaternion.identity);
         Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
         bulletRigidbody.velocity = playerCamera.transform.forward * bulletSpeed;
 

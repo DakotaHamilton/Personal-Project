@@ -1230,7 +1230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pistol: {fileID: 8071052617332053415}
   muzzle: {fileID: 3989615475755557139}
-  millimeterBullet: {fileID: 5067349677646369789, guid: af9d7fb410bbc8b42a8019e2a3b903b9, type: 3}
+  millimeterBullets: {fileID: 5067349677646369789, guid: af9d7fb410bbc8b42a8019e2a3b903b9, type: 3}
 --- !u!95 &3980500324948400000
 Animator:
   serializedVersion: 3

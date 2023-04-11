@@ -76,7 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assaultRifle: {fileID: 1740698025877024654}
   muzzle: {fileID: 4785735006224061761}
-  caliberBullet: {fileID: 3104633291340114218, guid: 20875ae6c64c8464a97ca9b993f5aa7d, type: 3}
+  caliberBullets: {fileID: 3104633291340114218, guid: 20875ae6c64c8464a97ca9b993f5aa7d, type: 3}
 --- !u!1 &7324533329401534295
 GameObject:
   m_ObjectHideFlags: 0

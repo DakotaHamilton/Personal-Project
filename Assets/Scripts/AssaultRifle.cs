@@ -6,7 +6,7 @@ public class AssaultRifle : MonoBehaviour
 {
     public GameObject assaultRifle;
     public Transform muzzle;
-    public GameObject caliberBullet;
+    public GameObject caliberBullets;
 
     // Start is called before the first frame update
     void Start()

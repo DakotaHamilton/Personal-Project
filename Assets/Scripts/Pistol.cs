@@ -6,7 +6,7 @@ public class Pistol : MonoBehaviour
 {
     public GameObject pistol;
     public Transform muzzle;
-    public GameObject millimeterBullet; // 9mm Bullet Prefab
+    public GameObject millimeterBullets; // 9mm Bullet Prefab
 
     // Start is called before the first frame update
     void Start()
