@@ -6,7 +6,7 @@ public class ThirdPersonShooter : MonoBehaviour
 {
     public Camera playerCamera; // Camera Slot
     public Transform weaponPivot; // Weapon Socket
-    public GameObject bulletPrefab; // Bullet Slot
+    private GameObject bulletPrefab; // Bullet Slot
     public AssaultRifle assaultRifle; // Assault Rifle 
     public Pistol pistol;
     public Shotgun shotgun;

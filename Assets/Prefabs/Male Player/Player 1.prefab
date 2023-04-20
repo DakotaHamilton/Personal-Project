@@ -401,7 +401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
   weaponPivot: {fileID: 7246593292808886854}
-  bulletPrefab: {fileID: 5067349677646369789, guid: af9d7fb410bbc8b42a8019e2a3b903b9, type: 3}
+  bulletPrefab: {fileID: 0}
   assaultRifle: {fileID: -4567294947553008341, guid: 61dfad678fd80504ea4304b15c93e856, type: 3}
   pistol: {fileID: -224346911086221532, guid: b1aa7a3b67727ab488b198befa0dac89, type: 3}
   shotgun: {fileID: -4273817371130130398, guid: 2f9addfb26f31e0418a5672482512bdf, type: 3}

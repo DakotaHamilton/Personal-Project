@@ -41,9 +41,6 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
         
-        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        
-
         if (enemyCount == 0)
         {
             Instantiate(enemyPrefab, spawner1);
