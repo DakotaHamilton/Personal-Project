@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1771923628022512962}
   - component: {fileID: -4273817371130130398}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Shotgun - FirePower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 1217967600637185050}
   - component: {fileID: 4048797947914630480}
   - component: {fileID: 654572709047112132}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Shotgun of Firepower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6230391498854373322}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MUZZLE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
