@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float tacticalRun; // Tactical Run Speed
     [SerializeField] private float rotationSpeed; // Look Left and Right Speed
     [SerializeField] private float jumpPower;
+    private bool IsJumping;
 
     // Update is called once per frame
     void Update()
@@ -45,8 +46,9 @@ public class PlayerController : MonoBehaviour
             transform.Translate(new Vector3(horizontalInput, 0, verticalInput) * speed * Time.deltaTime);
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
+
             playerRb.AddForce(Vector3.up * jumpPower,ForceMode.Impulse);
         }
     }

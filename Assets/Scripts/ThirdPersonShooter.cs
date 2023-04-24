@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class ThirdPersonShooter : MonoBehaviour
 {
@@ -40,8 +41,8 @@ public class ThirdPersonShooter : MonoBehaviour
         {
             Destroy(GameObject.Find("HK VP9 9mm Pistol(Clone)"));
             Destroy(GameObject.Find("Shotgun - FirePower(Clone)"));
-            Instantiate(assaultRifle, weaponPivot);
-            Muzzle = assaultRifle.muzzle;
+            GameObject weapon = Instantiate(assaultRifle.assaultRifle, weaponPivot);
+            Muzzle = weapon.GetComponent<AssaultRifle>().muzzle;
             bulletPrefab = assaultRifle.caliberBullets;
         }
 
@@ -49,8 +50,8 @@ public class ThirdPersonShooter : MonoBehaviour
         {
             Destroy(GameObject.Find("AR - Militaria(Clone)"));
             Destroy(GameObject.Find("Shotgun - FirePower(Clone)"));
-            Instantiate(pistol, weaponPivot);
-            Muzzle = pistol.muzzle;
+            GameObject weapon = Instantiate(pistol.pistol, weaponPivot);
+            Muzzle = weapon.GetComponent<Pistol>().muzzle;
             bulletPrefab = pistol.millimeterBullets;
         }
 
@@ -58,8 +59,8 @@ public class ThirdPersonShooter : MonoBehaviour
         {
             Destroy(GameObject.Find("AR - Militaria(Clone)"));
             Destroy(GameObject.Find("HK VP9 9mm Pistol(Clone)"));
-            Instantiate(shotgun.shotgun, weaponPivot);
-            Muzzle = shotgun.muzzle;
+            GameObject weapon = Instantiate(shotgun.shotgun, weaponPivot);
+            Muzzle = weapon.GetComponent<Shotgun>().muzzle;
             bulletPrefab = shotgun.shotgunPellets;
         }
 

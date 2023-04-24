@@ -7,6 +7,7 @@ public class SpawnManager : MonoBehaviour
 {
     public int enemyCount;
     private Enemy enemy;
+    private int waveCount;
 
     public float armatureSpeed;
     public GameObject enemyPrefab;
@@ -28,26 +29,52 @@ public class SpawnManager : MonoBehaviour
         {
             GameObject player = Instantiate(malePrefab, playerSpawn);
             playerCamera.Follow = player.transform;
+            player.GetComponent<ThirdPersonShooter>().playerCamera = Camera.main;
         }
         else if (isMale == false)
         {
             GameObject player = Instantiate(femalePrefab, playerSpawn);
             playerCamera.Follow = player.transform;
+            player.GetComponent<ThirdPersonShooter>().playerCamera = Camera.main;
         }
-
+        waveCount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
         
         if (enemyCount == 0)
         {
-            Instantiate(enemyPrefab, spawner1);
-            Instantiate(enemyPrefab, spawner2);
-            Instantiate(enemyPrefab, spawner3);
-            Instantiate(enemyPrefab, spawner4);
-            enemyCount++;
+            int j = 1;
+            waveCount++;
+
+            for (int i = 0; i < 4 * waveCount; i++)
+            {
+                switch (j)
+                {
+                    case 1:
+                        Instantiate(enemyPrefab, spawner1);
+                        break;
+                    case 2:
+                        Instantiate(enemyPrefab, spawner2);
+                        break;
+                    case 3:
+                        Instantiate(enemyPrefab, spawner3);
+                        break;
+                    case 4:
+                        Instantiate(enemyPrefab, spawner4);
+                        break;
+
+                }
+                enemyCount++;
+                j++;
+                if (j > 4)
+                {
+                    j = 1;
+                }
+            }
             armatureSpeed += 1;
         }
 

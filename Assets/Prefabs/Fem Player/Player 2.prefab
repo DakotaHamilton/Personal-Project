@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5832370766769296632}
   m_Layer: 0
   m_Name: Player 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,10 +67,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5f2f4a079404c4694d514cac6808d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRb: {fileID: 0}
+  playerRb: {fileID: 4410610860122038867}
   speed: 1
   tacticalRun: 3
   rotationSpeed: 200
+  jumpPower: 1
 --- !u!114 &-2137332263345531337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,7 +86,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
   weaponPivot: {fileID: 7376784464358870511}
-  bulletPrefab: {fileID: 0}
   assaultRifle: {fileID: -4567294947553008341, guid: 61dfad678fd80504ea4304b15c93e856, type: 3}
   pistol: {fileID: -224346911086221532, guid: b1aa7a3b67727ab488b198befa0dac89, type: 3}
   shotgun: {fileID: -4273817371130130398, guid: 2f9addfb26f31e0418a5672482512bdf, type: 3}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 156684764164065060}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 7376784464358870511}
   m_Layer: 0
   m_Name: Weapon Socket
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 2446286051542734636}
   m_Layer: 0
   m_Name: Beret
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 8092578559075993961}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -490,6 +490,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4299e3c89553f6e4094a08bfaea58f82, type: 3}
       propertyPath: m_Name
       value: Female.Hair
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4299e3c89553f6e4094a08bfaea58f82, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4299e3c89553f6e4094a08bfaea58f82, type: 3}
