@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
+using TMPro;
 
 public class SpawnManager : MonoBehaviour
 {
     public int enemyCount;
     private Enemy enemy;
-    private int waveCount;
+    private PlayerUI playerUI;
+    public int waveCount;
 
     public float armatureSpeed;
     public GameObject enemyPrefab;
@@ -43,6 +46,7 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
         
         if (enemyCount == 0)
