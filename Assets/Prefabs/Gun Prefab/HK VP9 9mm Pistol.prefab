@@ -1204,7 +1204,7 @@ Transform:
   m_GameObject: {fileID: 8071052617332053415}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 5332407606109371488}
   - {fileID: 2237205080380298220}
@@ -1231,6 +1231,7 @@ MonoBehaviour:
   pistol: {fileID: 8071052617332053415}
   muzzle: {fileID: 3989615475755557139}
   millimeterBullets: {fileID: 5067349677646369789, guid: af9d7fb410bbc8b42a8019e2a3b903b9, type: 3}
+  pistolFire: {fileID: 0}
 --- !u!95 &3980500324948400000
 Animator:
   serializedVersion: 3

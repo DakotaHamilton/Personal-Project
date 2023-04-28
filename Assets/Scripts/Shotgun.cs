@@ -4,19 +4,8 @@ using UnityEngine;
 
 public class Shotgun : MonoBehaviour
 {
-    public GameObject shotgun;
-    public Transform muzzle;
-    public GameObject shotgunPellets;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject shotgun; // Shotgun Object
+    public Transform muzzle; // Shotgun Muzzle
+    public GameObject shotgunPellets; // Shotgun Pellet Prefab
+    public AudioClip shotgunBlast; // Shotgun Firing Sound
 }

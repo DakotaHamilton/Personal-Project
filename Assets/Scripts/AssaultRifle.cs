@@ -4,19 +4,8 @@ using UnityEngine;
 
 public class AssaultRifle : MonoBehaviour
 {
-    public GameObject assaultRifle;
-    public Transform muzzle;
-    public GameObject caliberBullets;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject assaultRifle; // Assault Rifle Object
+    public Transform muzzle; // Assault Rifle Muzzle
+    public GameObject caliberBullets; // Caliber Bullet Prefab
+    public AudioClip assaultRifleShot; // Assault Rifle Firing Sound
 }

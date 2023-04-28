@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public Rigidbody enemyRb;
     private GameObject player1;
     private GameObject player2;
+    private GameManager gameManager;
     private SpawnManager spawnManager;
 
     // Start is called before the first frame update
@@ -36,5 +37,14 @@ public class Enemy : MonoBehaviour
         aI.speed = spawnManager.armatureSpeed;
 
         animator.SetFloat("Speed", aI.speed);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(other.gameObject);
+            gameManager.IsGameActive = false;
+        }
     }
 }

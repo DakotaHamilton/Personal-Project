@@ -12,23 +12,29 @@ public class GameManager : MonoBehaviour
     public Button subMainButton;
     public Button subMainBackButton;
     public Button settingsButton;
+    public Slider musicSlider;
+    public Slider audioSfxSlider;
     public Button settingsBackButton;
     public Button lockerButton;
     public Button lockerBackButton;
-    
+    public Button creditsButton;
+    public Button creditsBackButton;
+    public AudioSource menuAudio;
+    public float musicVolume;
 
     public GameObject mainMenu;
     public GameObject subMainMenu;
     public GameObject settings;
     public GameObject locker;
+    public GameObject credits;
     public bool isActive;
-
-    public Scene male;
-    public Scene female;
+    public bool IsGameActive;
 
     // Start is called before the first frame update
     void Start()
     {
+        IsGameActive = false;
+
         maleButton.onClick.AddListener(MaleStart);
         femaleButton.onClick.AddListener(FemaleStart);
 
@@ -40,28 +46,26 @@ public class GameManager : MonoBehaviour
 
         lockerButton.onClick.AddListener(Locker);
         lockerBackButton.onClick.AddListener(MainMenu);
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-
+        creditsButton.onClick.AddListener(Credits);
+        creditsBackButton.onClick.AddListener(MainMenu);
     }
 
     public void MainMenu()
     {
-        mainMenu.gameObject.SetActive(true);
-        subMainMenu.gameObject.SetActive(false);
-        settings.gameObject.SetActive(false);
-        locker.gameObject.SetActive(false);
+        mainMenu.SetActive(true);
+        subMainMenu.SetActive(false);
+        settings.SetActive(false);
+        locker.SetActive(false);
+        credits.SetActive(false);
     }
 
     public void SubMain()
     {
-        mainMenu.gameObject.SetActive(false);
-        subMainMenu.gameObject.SetActive(true);
-        settings.gameObject.SetActive(false);
-        locker.gameObject.SetActive(false);
+        mainMenu.SetActive(false);
+        subMainMenu.SetActive(true);
+        settings.SetActive(false);
+        locker.SetActive(false);
     }
 
     public void MaleStart()
@@ -80,17 +84,26 @@ public class GameManager : MonoBehaviour
 
     public void Settings()
     {
-        mainMenu.gameObject.SetActive(false);
-        subMainMenu.gameObject.SetActive(false);
-        settings.gameObject.SetActive(true);
-        locker.gameObject.SetActive(false);
+        mainMenu.SetActive(false);
+        subMainMenu.SetActive(false);
+        settings.SetActive(true);
+        locker.SetActive(false);
     }
 
     public void Locker()
     {
-        mainMenu.gameObject.SetActive(false);
-        subMainMenu.gameObject.SetActive(false);
-        settings.gameObject.SetActive(false);
-        locker.gameObject.SetActive(true);
+        mainMenu.SetActive(false);
+        subMainMenu.SetActive(false);
+        settings.SetActive(false);
+        locker.SetActive(true);
+    }
+
+    public void Credits()
+    {
+        mainMenu.SetActive(false);
+        subMainMenu.SetActive(false);
+        settings.SetActive(false);
+        locker.SetActive(false);
+        credits.SetActive(true);
     }
 }
