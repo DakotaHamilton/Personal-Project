@@ -8,11 +8,14 @@ public class ThirdPersonShooter : MonoBehaviour
     public Camera playerCamera; // Camera Slot
     public Transform weaponPivot; // Weapon Socket
     private GameObject bulletPrefab; // Bullet Slot
-    public AssaultRifle assaultRifle; // Assault Rifle 
-    public Pistol pistol; // Pistol
-    public Shotgun shotgun; // Shotgun
+    private AssaultRifle assaultRifle; // Assault Rifle 
+    private Pistol pistol; // Pistol
+    private Shotgun shotgun; // Shotgun
+    private GameManager gameManager;
 
     private Transform Muzzle;
+
+    private GameObject yourWeapon;
 
     [SerializeField] private float bulletSpeed;
     [SerializeField] private float fireRate;

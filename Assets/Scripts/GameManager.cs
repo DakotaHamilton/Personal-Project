@@ -17,23 +17,33 @@ public class GameManager : MonoBehaviour
     public Button settingsBackButton;
     public Button lockerButton;
     public Button lockerBackButton;
+    public Button pistolButton;
+    public Button shotgunButton;
+    public Button assaultRifleButton;
     public Button creditsButton;
     public Button creditsBackButton;
     public AudioSource menuAudio;
     public float musicVolume;
-
     public GameObject mainMenu;
     public GameObject subMainMenu;
     public GameObject settings;
     public GameObject locker;
     public GameObject credits;
-    public bool isActive;
     public bool IsGameActive;
+    public bool activeWeapon;
+    public GameObject[] weapons;
+
+    private GameObject weapon { get; set; }
 
     // Start is called before the first frame update
     void Start()
     {
         IsGameActive = false;
+
+        if (weapon == null)
+        {
+            activeWeapon = false;
+        }
 
         maleButton.onClick.AddListener(MaleStart);
         femaleButton.onClick.AddListener(FemaleStart);
@@ -45,6 +55,9 @@ public class GameManager : MonoBehaviour
         settingsBackButton.onClick.AddListener(MainMenu);
 
         lockerButton.onClick.AddListener(Locker);
+        pistolButton.onClick.AddListener(Weapon);
+        shotgunButton.onClick.AddListener(Weapon);
+        assaultRifleButton.onClick.AddListener(Weapon);
         lockerBackButton.onClick.AddListener(MainMenu);
 
         creditsButton.onClick.AddListener(Credits);
@@ -105,5 +118,21 @@ public class GameManager : MonoBehaviour
         settings.SetActive(false);
         locker.SetActive(false);
         credits.SetActive(true);
+    }
+
+    public void Weapon()
+    {
+        if (pistolButton)
+        {
+            weapon = weapons[0];
+        }
+        else if (shotgunButton)
+        {
+            weapon = weapons[1];
+        }
+        else if (assaultRifleButton)
+        {
+            weapon = weapons[2];
+        }
     }
 }

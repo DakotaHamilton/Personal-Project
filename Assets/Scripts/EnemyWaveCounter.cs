@@ -6,10 +6,13 @@ using TMPro;
 
 public class EnemyWaveCounter : MonoBehaviour
 {
+    private GameManager gameManager;
+
     public int totalWaves = 10;
     public int currentWave = 0;
 
     public TMP_Text waveText;
+    public TMP_Text currencyText;
 
     public void NextWave()
     {

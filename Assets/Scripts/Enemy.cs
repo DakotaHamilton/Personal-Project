@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
     public Rigidbody enemyRb;
     private GameObject player1;
     private GameObject player2;
-    private GameManager gameManager;
     private SpawnManager spawnManager;
 
     // Start is called before the first frame update
@@ -44,7 +43,6 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Destroy(other.gameObject);
-            gameManager.IsGameActive = false;
         }
     }
 }

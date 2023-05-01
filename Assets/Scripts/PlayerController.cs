@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         float horizontalInput = Input.GetAxis("Horizontal"); // Gets the Left and Right Input
         
         float verticalInput = Input.GetAxis("Vertical"); // Gets the Forward and Back Input
@@ -36,11 +38,12 @@ public class PlayerController : MonoBehaviour
 
         transform.Rotate(Vector3.up, horizontalInput2 * rotationSpeed * Time.deltaTime); // Looks Left and Right on the X Axis
 
+        anim.SetFloat("Speed", (float)Mathf.Abs(horizontalInput));
+        anim.SetFloat("Speed", (float)Mathf.Abs(verticalInput));
+
         if (Input.GetKey(KeyCode.LeftShift))
         {
             transform.Translate(speed * tacticalRun * Time.deltaTime * new Vector3(horizontalInput, 0, verticalInput));
         }
-        
-        anim.Play("Walking");
     }
 }
