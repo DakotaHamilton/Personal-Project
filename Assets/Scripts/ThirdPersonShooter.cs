@@ -12,6 +12,7 @@ public class ThirdPersonShooter : MonoBehaviour
     private AssaultRifle assaultRifle; // Assault Rifle 
     public Pistol pistol; // Pistol
     private Shotgun shotgun; // Shotgun
+    public AudioSource audioSource; // Audio Source
     private readonly GameManager gameManager;
 
     private Transform Muzzle;
@@ -27,8 +28,10 @@ public class ThirdPersonShooter : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        Instantiate(pistol.pistol, weaponPivot);
+        GameObject weapon = Instantiate(pistol.pistol, weaponPivot);
         Muzzle = pistol.GetComponent<Pistol>().muzzle;
+        audioSource = weapon.GetComponent<AudioSource>();
+        pistol.anim = GetComponent<Animator>();
 
     }
 
@@ -76,7 +79,8 @@ public class ThirdPersonShooter : MonoBehaviour
 
         if (Input.GetButton("Fire1") && Time.time >= nextFireTime)
         {
-            
+            pistol.anim.SetBool("IsFiring", true);
+            audioSource.Play();
             nextFireTime = Time.time + fireRate;
             Shoot();
         }
@@ -87,11 +91,5 @@ public class ThirdPersonShooter : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, Muzzle.position, Quaternion.identity);
         Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
         bulletRigidbody.velocity = playerCamera.transform.forward * bulletSpeed;
-        PistolFire();
-    }
-
-    public void PistolFire()
-    {
-        pistol.fireWeapon.PlayOneShot(pistol.fireWeapon.clip, pistol.fireWeapon.volume);
     }
 }

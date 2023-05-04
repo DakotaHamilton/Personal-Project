@@ -1224,6 +1224,8 @@ MonoBehaviour:
   weaponPivot: {fileID: 7246593292808886854}
   bulletPrefab: {fileID: 5067349677646369789, guid: af9d7fb410bbc8b42a8019e2a3b903b9, type: 3}
   pistol: {fileID: -224346911086221532, guid: b1aa7a3b67727ab488b198befa0dac89, type: 3}
+  audioSource: {fileID: 0}
+  fireSound: {fileID: 0}
 --- !u!65 &393569625587510915
 BoxCollider:
   m_ObjectHideFlags: 0
