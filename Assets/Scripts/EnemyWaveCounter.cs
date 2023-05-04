@@ -6,7 +6,7 @@ using TMPro;
 
 public class EnemyWaveCounter : MonoBehaviour
 {
-    private GameManager gameManager;
+    private readonly GameManager gameManager;
 
     public int totalWaves = 10;
     public int currentWave = 0;

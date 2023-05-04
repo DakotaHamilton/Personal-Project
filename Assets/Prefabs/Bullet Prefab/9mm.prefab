@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 240076002126489197}
   - component: {fileID: 2961837421056799221}
   - component: {fileID: 9715857484902882}
-  - component: {fileID: 2814499999294751451}
   m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
@@ -82,19 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &2814499999294751451
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826235432002881687}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5067349677646369789
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +92,7 @@ GameObject:
   - component: {fileID: 2763666948046203846}
   - component: {fileID: 3824060637006069191}
   - component: {fileID: -3313568976287275664}
+  - component: {fileID: 3147275577619290380}
   m_Layer: 3
   m_Name: 9mm
   m_TagString: Bullet
@@ -156,3 +143,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359c10e6dc6577848b3bdf59b5fedd54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &3147275577619290380
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5067349677646369789}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}

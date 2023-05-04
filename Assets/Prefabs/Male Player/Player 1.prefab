@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6721667789250235012}
   - component: {fileID: 1833179859058945899}
   - component: {fileID: 1937198286239991723}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 6717177587287486609}
   - component: {fileID: 5974027009824551046}
   - component: {fileID: 8872551221334224222}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Upper Arm
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 8319850891104275859}
   - component: {fileID: 2537128305328665011}
   - component: {fileID: 2261741698445018173}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lower Right Leg
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5219755501192021409}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left Leg
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 468571150011773978}
   - component: {fileID: 6255989149520161202}
   - component: {fileID: 6650857674655087142}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lower Arm
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 4724404736297164677}
   - component: {fileID: 3336515387656012391}
   - component: {fileID: 443146077516918324}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Beret
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 4504707425467609435}
   - component: {fileID: 364026461274900146}
   - component: {fileID: 7528989128296015493}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Upper Arm
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -605,7 +605,7 @@ GameObject:
   - component: {fileID: 8652391878614858029}
   - component: {fileID: 2770488475782328947}
   - component: {fileID: 7990947749065607427}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lower Arm
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -698,7 +698,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 953328416483278221}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Skeleton
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -734,7 +734,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8217099782261487672}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right Arm
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -769,7 +769,7 @@ GameObject:
   - component: {fileID: 359334848453448209}
   - component: {fileID: 392805603704159339}
   - component: {fileID: 7530147456479742438}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -865,7 +865,7 @@ GameObject:
   - component: {fileID: 7518545334731385001}
   - component: {fileID: 6535317968394273420}
   - component: {fileID: 4733823855840990152}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Upper Left Leg
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -958,7 +958,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7246593292808886854}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Weapon Socket
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -991,7 +991,7 @@ GameObject:
   - component: {fileID: 1834104056590793603}
   - component: {fileID: 5516477358337179198}
   - component: {fileID: 3620471736128369787}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Upper Right Leg
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1084,7 +1084,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2523618548170190720}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left Arm
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1116,7 +1116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7194278673600036465}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right Leg
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1153,7 +1153,7 @@ GameObject:
   - component: {fileID: -2131485006017568762}
   - component: {fileID: 393569625587510915}
   - component: {fileID: 6835387289254876713}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player 1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1206,8 +1206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   playerRb: {fileID: 4469771566004152050}
-  speed: 1
-  tacticalRun: 3
+  speed: 3
   rotationSpeed: 200
 --- !u!114 &-2131485006017568762
 MonoBehaviour:
@@ -1223,11 +1222,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
   weaponPivot: {fileID: 7246593292808886854}
-  assaultRifle: {fileID: -4567294947553008341, guid: 61dfad678fd80504ea4304b15c93e856, type: 3}
+  bulletPrefab: {fileID: 5067349677646369789, guid: af9d7fb410bbc8b42a8019e2a3b903b9, type: 3}
   pistol: {fileID: -224346911086221532, guid: b1aa7a3b67727ab488b198befa0dac89, type: 3}
-  shotgun: {fileID: -4273817371130130398, guid: 2f9addfb26f31e0418a5672482512bdf, type: 3}
-  bulletSpeed: 50
-  fireRate: 0.5
 --- !u!65 &393569625587510915
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1272,7 +1268,7 @@ GameObject:
   - component: {fileID: 2544852774964116968}
   - component: {fileID: 3616487894525281176}
   - component: {fileID: 1568818077287413911}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lower Left Leg
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1426,6 +1422,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1d595008e2c9dc44689ef37a0673b9e0, type: 3}
       propertyPath: m_Name
       value: Male.Hair
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1d595008e2c9dc44689ef37a0673b9e0, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1d595008e2c9dc44689ef37a0673b9e0, type: 3}
       propertyPath: m_TagString

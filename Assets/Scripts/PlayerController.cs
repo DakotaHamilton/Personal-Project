@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     }
 
     [SerializeField] private float speed; // Movement Speed
-    [SerializeField] private float tacticalRun; // Tactical Run Speed
     [SerializeField] private float rotationSpeed; // Look Left and Right Speed
 
     // Update is called once per frame
@@ -38,12 +37,6 @@ public class PlayerController : MonoBehaviour
 
         transform.Rotate(Vector3.up, horizontalInput2 * rotationSpeed * Time.deltaTime); // Looks Left and Right on the X Axis
 
-        anim.SetFloat("Speed", (float)Mathf.Abs(horizontalInput));
-        anim.SetFloat("Speed", (float)Mathf.Abs(verticalInput));
-
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            transform.Translate(speed * tacticalRun * Time.deltaTime * new Vector3(horizontalInput, 0, verticalInput));
-        }
+        anim.SetFloat("Speed", (float)Mathf.Abs(verticalInput + horizontalInput));
     }
 }

@@ -2,23 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using System.IO;
 
 public class ThirdPersonShooter : MonoBehaviour
 {
     public Camera playerCamera; // Camera Slot
     public Transform weaponPivot; // Weapon Socket
-    private GameObject bulletPrefab; // Bullet Slot
+    public GameObject bulletPrefab; // Bullet Slot
     private AssaultRifle assaultRifle; // Assault Rifle 
-    private Pistol pistol; // Pistol
+    public Pistol pistol; // Pistol
     private Shotgun shotgun; // Shotgun
-    private GameManager gameManager;
+    private readonly GameManager gameManager;
 
     private Transform Muzzle;
 
-    private GameObject yourWeapon;
+    /*public GameObject yourWeapon;*/
 
-    [SerializeField] private float bulletSpeed;
-    [SerializeField] private float fireRate;
+    private readonly float bulletSpeed = 20;
+    private static float fireRate = 0.5f;
 
     private float nextFireTime;
 
@@ -26,6 +27,9 @@ public class ThirdPersonShooter : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        Instantiate(pistol.pistol, weaponPivot);
+        Muzzle = pistol.GetComponent<Pistol>().muzzle;
+
     }
 
     // Update is called once per frame
@@ -72,6 +76,7 @@ public class ThirdPersonShooter : MonoBehaviour
 
         if (Input.GetButton("Fire1") && Time.time >= nextFireTime)
         {
+            
             nextFireTime = Time.time + fireRate;
             Shoot();
         }
@@ -82,6 +87,11 @@ public class ThirdPersonShooter : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, Muzzle.position, Quaternion.identity);
         Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
         bulletRigidbody.velocity = playerCamera.transform.forward * bulletSpeed;
+        PistolFire();
+    }
 
+    public void PistolFire()
+    {
+        pistol.fireWeapon.PlayOneShot(pistol.fireWeapon.clip, pistol.fireWeapon.volume);
     }
 }

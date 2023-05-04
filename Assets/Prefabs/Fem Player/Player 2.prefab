@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5264661216503104973}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Skeleton
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -50,7 +50,8 @@ GameObject:
   - component: {fileID: -2137332263345531337}
   - component: {fileID: -5832370766769296632}
   - component: {fileID: 978377956}
-  m_Layer: 0
+  - component: {fileID: 1195774434326185921}
+  m_Layer: 7
   m_Name: Player 2
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -103,8 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   playerRb: {fileID: 4410610860122038867}
-  speed: 1
-  tacticalRun: 3
+  speed: 3
   rotationSpeed: 200
 --- !u!114 &-2137332263345531337
 MonoBehaviour:
@@ -120,11 +120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
   weaponPivot: {fileID: 7376784464358870511}
-  assaultRifle: {fileID: -4567294947553008341, guid: 61dfad678fd80504ea4304b15c93e856, type: 3}
+  bulletPrefab: {fileID: 5067349677646369789, guid: af9d7fb410bbc8b42a8019e2a3b903b9, type: 3}
   pistol: {fileID: -224346911086221532, guid: b1aa7a3b67727ab488b198befa0dac89, type: 3}
-  shotgun: {fileID: -4273817371130130398, guid: 2f9addfb26f31e0418a5672482512bdf, type: 3}
-  bulletSpeed: 20
-  fireRate: 0.5
 --- !u!65 &-5832370766769296632
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -157,6 +154,14 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!81 &1195774434326185921
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573607409048621691}
+  m_Enabled: 1
 --- !u!1 &606307359177575103
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +174,7 @@ GameObject:
   - component: {fileID: 630355762212156259}
   - component: {fileID: 5192925117930171189}
   - component: {fileID: 6083158376401556501}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Upper Arm
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -265,7 +270,7 @@ GameObject:
   - component: {fileID: 7034170234331000522}
   - component: {fileID: 2093565662907227993}
   - component: {fileID: 4729592951467266043}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lower Leg
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -358,7 +363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2538136995338834014}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right Arm
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -393,7 +398,7 @@ GameObject:
   - component: {fileID: 7948941189036825811}
   - component: {fileID: 8061254616138904233}
   - component: {fileID: 156684764164065060}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -486,7 +491,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4806750510528771052}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right Leg
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -518,7 +523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7376784464358870511}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Weapon Socket
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -550,7 +555,7 @@ GameObject:
   - component: {fileID: 7210007670241924803}
   - component: {fileID: 6571625953148716886}
   - component: {fileID: 1911568528529815151}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Beret
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -632,7 +637,7 @@ GameObject:
   - component: {fileID: 1039149158632531137}
   - component: {fileID: 6954371852880948154}
   - component: {fileID: 7363182219789906207}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lower Arm
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -728,7 +733,7 @@ GameObject:
   - component: {fileID: 4027621029345772614}
   - component: {fileID: 8348567187608674729}
   - component: {fileID: 8092578559075993961}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -821,7 +826,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4847577902527863637}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left Arm
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -856,7 +861,7 @@ GameObject:
   - component: {fileID: 815982414477879161}
   - component: {fileID: 1987344741482297783}
   - component: {fileID: 5627740123683084742}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Upper Leg
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -952,7 +957,7 @@ GameObject:
   - component: {fileID: 6117170082190197546}
   - component: {fileID: 8164928034992140990}
   - component: {fileID: 3904503256666948026}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lower Leg
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1048,7 +1053,7 @@ GameObject:
   - component: {fileID: 6102144322352114041}
   - component: {fileID: 31320223480522342}
   - component: {fileID: 7460798315324343328}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Upper Leg
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1141,7 +1146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5219239895604727598}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left Leg
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1176,7 +1181,7 @@ GameObject:
   - component: {fileID: 7286602188144092600}
   - component: {fileID: 7501675484950980252}
   - component: {fileID: 4067106221939488092}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lower Arm
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1272,7 +1277,7 @@ GameObject:
   - component: {fileID: 33757935993709134}
   - component: {fileID: 7111772988406068692}
   - component: {fileID: 6202825573140240224}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Upper Arm
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1426,6 +1431,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4299e3c89553f6e4094a08bfaea58f82, type: 3}
       propertyPath: m_Name
       value: Female.Hair
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4299e3c89553f6e4094a08bfaea58f82, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4299e3c89553f6e4094a08bfaea58f82, type: 3}
       propertyPath: m_TagString

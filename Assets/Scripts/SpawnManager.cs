@@ -7,7 +7,7 @@ public class SpawnManager : MonoBehaviour
 {
     public int enemyCount;
     public EnemyWaveCounter waveCounter;
-    private GameManager gameManager;
+    private readonly GameManager gameManager;
     public int waveCount;
 
     public float armatureSpeed;
@@ -38,7 +38,6 @@ public class SpawnManager : MonoBehaviour
             GameObject player = Instantiate(femalePrefab, playerSpawn);
             playerCamera.Follow = player.transform;
             player.GetComponent<ThirdPersonShooter>().playerCamera = Camera.main;
-
         }
         waveCount = 0;
     }
