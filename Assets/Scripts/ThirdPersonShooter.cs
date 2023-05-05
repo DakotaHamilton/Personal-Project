@@ -19,7 +19,7 @@ public class ThirdPersonShooter : MonoBehaviour
 
     /*public GameObject yourWeapon;*/
 
-    private readonly float bulletSpeed = 20;
+    private readonly float bulletSpeed = 50;
     private static float fireRate = 0.5f;
 
     private float nextFireTime;
@@ -29,9 +29,9 @@ public class ThirdPersonShooter : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         GameObject weapon = Instantiate(pistol.pistol, weaponPivot);
-        Muzzle = pistol.GetComponent<Pistol>().muzzle;
+        Muzzle = weapon.GetComponent<Pistol>().muzzle;
         audioSource = weapon.GetComponent<AudioSource>();
-        pistol.anim = GetComponent<Animator>();
+        pistol.animator = weapon.GetComponent<Animator>();
 
     }
 
@@ -42,9 +42,6 @@ public class ThirdPersonShooter : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
         }
 
         /// FOR WEAPON TESTING /// GIVES ALL WEAPONS
@@ -79,7 +76,9 @@ public class ThirdPersonShooter : MonoBehaviour
 
         if (Input.GetButton("Fire1") && Time.time >= nextFireTime)
         {
-            pistol.anim.SetBool("IsFiring", true);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            pistol.animator.SetBool("IsFiring", true);
             audioSource.Play();
             nextFireTime = Time.time + fireRate;
             Shoot();
@@ -91,5 +90,6 @@ public class ThirdPersonShooter : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, Muzzle.position, Quaternion.identity);
         Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
         bulletRigidbody.velocity = playerCamera.transform.forward * bulletSpeed;
+        pistol.animator.SetBool("IsFiring", false);
     }
 }

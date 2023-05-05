@@ -11,7 +11,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Arena.unity
     guid: 36912881c72644543b3eaadec5935109
-  - enabled: 0
-    path: Assets/Scenes/Female.unity
-    guid: 07398b4c59a2c174992baadd27415dc0
   m_configObjects: {}

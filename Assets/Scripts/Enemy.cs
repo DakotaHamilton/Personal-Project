@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     private GameObject player1;
     private GameObject player2;
     private SpawnManager spawnManager;
+    private GameManager gameManager;
     public LocationInfo location;
 
     // Start is called before the first frame update
@@ -44,6 +45,7 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Destroy(other.gameObject);
+            spawnManager.OnDeath();
         }
     }
 }

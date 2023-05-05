@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SpawnManager : MonoBehaviour
 {
     public int enemyCount;
     public EnemyWaveCounter waveCounter;
     private readonly GameManager gameManager;
+    private ThirdPersonShooter thirdPersonShooter;
     public int waveCount;
 
     public float armatureSpeed;
@@ -21,6 +24,12 @@ public class SpawnManager : MonoBehaviour
     public Transform spawner2;
     public Transform spawner3;
     public Transform spawner4;
+    [Space]
+    
+    public GameObject GameOver;
+    public Button RetryButton;
+    public Button MainMenuButton;
+    
 
 
     // Start is called before the first frame update
@@ -33,13 +42,36 @@ public class SpawnManager : MonoBehaviour
             playerCamera.Follow = player.transform;
             player.GetComponent<ThirdPersonShooter>().playerCamera = Camera.main;
         }
-        else if (isMale == false)
+        if (isMale == false)
         {
             GameObject player = Instantiate(femalePrefab, playerSpawn);
             playerCamera.Follow = player.transform;
             player.GetComponent<ThirdPersonShooter>().playerCamera = Camera.main;
         }
         waveCount = 0;
+
+        //InGame Buttons
+
+        RetryButton.onClick.AddListener(Retry);
+        MainMenuButton.onClick.AddListener(ReturnToMainMenu);
+    }
+
+    // InGame Buttons Function
+    public void Retry()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void OnDeath()
+    {
+        GameOver.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
 
     // Update is called once per frame

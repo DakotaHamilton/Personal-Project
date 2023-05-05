@@ -15,32 +15,44 @@ public class GameManager : MonoBehaviour
 
     public Button maleButton;
     public Button femaleButton;
+    [Space]
     public Button subMainButton;
     public Button subMainBackButton;
+    [Space]
     public Button settingsButton;
+    public Button settingsBackButton;
+    [Space]
     public Slider musicSlider;
     public Slider audioSfxSlider;
-    public Button settingsBackButton;
+    [Space]
     public Button lockerButton;
     public Button lockerBackButton;
+    [Space]
     public Button pistolButton;
     public Text pistolButtonText;
+    [Space]
     public Button shotgunButton;
     public Text shotgunButtonText;
+    [Space]
     public Button assaultRifleButton;
     public Text assaultRifleButtonText;
+    [Space]
     public Button creditsButton;
     public Button creditsBackButton;
+    [Space]
     public Button quitButton;
     public AudioSource menuAudio;
     public float musicVolume;
+    [Space]
     public GameObject mainMenu;
     public GameObject subMainMenu;
     public GameObject settings;
     public GameObject locker;
     public GameObject credits;
     public bool IsGameActive;
+    [Space]
     public GameObject[] AvailableWeapons;
+    [Space]
     public GameObject[] AvailableAmmunitions;
 
     public GameObject Weapon { get; set; }
@@ -51,18 +63,16 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        IsGameActive = false;
 
-        /*
         if (Instance != null)
         {
             Destroy(gameObject);
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        LoadWeaponData();
+        /*
+         * LoadWeaponData();
         */
-
 
         maleButton.onClick.AddListener(MaleStart);
         femaleButton.onClick.AddListener(FemaleStart);
@@ -184,6 +194,7 @@ public class GameManager : MonoBehaviour
     }
     */
 
+    /*
     class SaveData
     {
         public GameObject Gun;
@@ -192,6 +203,7 @@ public class GameManager : MonoBehaviour
         public Text WeaponSelectText;
     }
 
+    
     private void SaveWeaponData()
     {
         SaveData data = new SaveData
@@ -221,6 +233,7 @@ public class GameManager : MonoBehaviour
             WeaponButtonText = data.WeaponSelectText;
         }
     }
+    */
 
     public void Quit()
     {
