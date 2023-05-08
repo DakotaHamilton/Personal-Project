@@ -35,7 +35,6 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         if (isMale == true)
         {
             GameObject player = Instantiate(malePrefab, playerSpawn);
@@ -70,7 +69,7 @@ public class SpawnManager : MonoBehaviour
     public void OnDeath()
     {
         GameOver.SetActive(true);
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 

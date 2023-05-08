@@ -14,11 +14,6 @@ public class EnemyWaveCounter : MonoBehaviour
     public TMP_Text waveText;
     public TMP_Text currencyText;
 
-    public void NextWave()
-    {
-        currentWave++;
-    }
-
     void Update()
     {
         if (currentWave == totalWaves)
@@ -32,6 +27,11 @@ public class EnemyWaveCounter : MonoBehaviour
             Debug.Log("Not Last Wave!"); // DEBUGGING ONLY
         }
         */
+    }
+
+    public void NextWave()
+    {
+        currentWave++;
     }
 
     public bool IsLastWave()

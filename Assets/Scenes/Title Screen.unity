@@ -5736,7 +5736,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 831815890}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -5972,6 +5972,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1107970535}
     m_Modifications:
+    - target: {fileID: -4150113611494051947, guid: 0d9077a83182d8841af2edde01f863a0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -2131485006017568762, guid: 0d9077a83182d8841af2edde01f863a0, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -7090,13 +7094,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4410610860122038867, guid: e32eead756cc013458b6a4c96fc5e4d8, type: 3}
-      propertyPath: m_UseGravity
+    - target: {fileID: 1862109187278204573, guid: e32eead756cc013458b6a4c96fc5e4d8, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4410610860122038867, guid: e32eead756cc013458b6a4c96fc5e4d8, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e32eead756cc013458b6a4c96fc5e4d8, type: 3}

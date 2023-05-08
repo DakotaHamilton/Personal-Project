@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using System.IO;
+using UnityEngine.InputSystem;
 
 public class ThirdPersonShooter : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class ThirdPersonShooter : MonoBehaviour
     private Shotgun shotgun; // Shotgun
     public AudioSource audioSource; // Audio Source
     private readonly GameManager gameManager;
-
+    private Animator animator;
+    private ParticleSystem particles;
     private Transform Muzzle;
 
     /*public GameObject yourWeapon;*/
@@ -23,6 +25,7 @@ public class ThirdPersonShooter : MonoBehaviour
     private static float fireRate = 0.5f;
 
     private float nextFireTime;
+    private bool hasFired;
 
     void Start()
     {
@@ -30,66 +33,31 @@ public class ThirdPersonShooter : MonoBehaviour
         Cursor.visible = false;
         GameObject weapon = Instantiate(pistol.pistol, weaponPivot);
         Muzzle = weapon.GetComponent<Pistol>().muzzle;
+        particles = weapon.GetComponent<ParticleSystem>();
         audioSource = weapon.GetComponent<AudioSource>();
-        pistol.animator = weapon.GetComponent<Animator>();
+        animator = weapon.GetComponent<Animator>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (hasFired)
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-
-        /// FOR WEAPON TESTING /// GIVES ALL WEAPONS
-        /*
-        if (Input.GetKeyDown(KeyCode.Alpha1) && !GameObject.Find("AR - Militaria(Clone)"))
-        {
-            Destroy(GameObject.Find("HK VP9 9mm Pistol(Clone)"));
-            Destroy(GameObject.Find("Shotgun - FirePower(Clone)"));
-            GameObject weapon = Instantiate(assaultRifle.assaultRifle, weaponPivot);
-            Muzzle = weapon.GetComponent<AssaultRifle>().muzzle;
-            bulletPrefab = assaultRifle.caliberBullets;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2) && !GameObject.Find("HK VP9 9mm Pistol(Clone)"))
-        {
-            Destroy(GameObject.Find("AR - Militaria(Clone)"));
-            Destroy(GameObject.Find("Shotgun - FirePower(Clone)"));
-            GameObject weapon = Instantiate(pistol.pistol, weaponPivot);
-            Muzzle = weapon.GetComponent<Pistol>().muzzle;
-            bulletPrefab = pistol.millimeterBullets;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3) && !GameObject.Find("Shotgun - FirePower(Clone)"))
-        {
-            Destroy(GameObject.Find("AR - Militaria(Clone)"));
-            Destroy(GameObject.Find("HK VP9 9mm Pistol(Clone)"));
-            GameObject weapon = Instantiate(shotgun.shotgun, weaponPivot);
-            Muzzle = weapon.GetComponent<Shotgun>().muzzle;
-            bulletPrefab = shotgun.shotgunPellets;
-        }
-        */
-
-        if (Input.GetButton("Fire1") && Time.time >= nextFireTime)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            pistol.animator.SetBool("IsFiring", true);
-            audioSource.Play();
-            nextFireTime = Time.time + fireRate;
-            Shoot();
+            audioSource.PlayOneShot(audioSource.clip);
+            particles.Play();
+            animator.SetBool("IsFiring", true);
+            GameObject bullet = Instantiate(bulletPrefab, Muzzle.position, Quaternion.identity);
+            Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+            bulletRigidbody.velocity = playerCamera.transform.forward * bulletSpeed;
         }
     }
 
-    private void Shoot()
+    public void Shoot(InputAction.CallbackContext context)
     {
-        GameObject bullet = Instantiate(bulletPrefab, Muzzle.position, Quaternion.identity);
-        Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
-        bulletRigidbody.velocity = playerCamera.transform.forward * bulletSpeed;
-        pistol.animator.SetBool("IsFiring", false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        hasFired = context.ReadValueAsButton();
+        nextFireTime = Time.time + fireRate;
     }
 }
