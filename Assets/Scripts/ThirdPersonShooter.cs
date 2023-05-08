@@ -42,15 +42,7 @@ public class ThirdPersonShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hasFired)
-        {
-            audioSource.PlayOneShot(audioSource.clip);
-            particles.Play();
-            animator.SetBool("IsFiring", true);
-            GameObject bullet = Instantiate(bulletPrefab, Muzzle.position, Quaternion.identity);
-            Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
-            bulletRigidbody.velocity = playerCamera.transform.forward * bulletSpeed;
-        }
+
     }
 
     public void Shoot(InputAction.CallbackContext context)
@@ -58,6 +50,14 @@ public class ThirdPersonShooter : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         hasFired = context.ReadValueAsButton();
+
+        GameObject bullet = Instantiate(bulletPrefab, Muzzle.position, Quaternion.identity);
+        Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+        bulletRigidbody.velocity = playerCamera.transform.forward * bulletSpeed;
         nextFireTime = Time.time + fireRate;
+
+        audioSource.PlayOneShot(audioSource.clip);
+        particles.Play();
+        animator.SetBool("IsFiring", true);
     }
 }
