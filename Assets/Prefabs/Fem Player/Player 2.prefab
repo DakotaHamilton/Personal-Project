@@ -195,13 +195,13 @@ MonoBehaviour:
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -2137332263345531337}
+      - m_Target: {fileID: 573607409048621691}
         m_TargetAssemblyTypeName: ThirdPersonShooter, Assembly-CSharp
-        m_MethodName: Shoot
-        m_Mode: 0
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -209,10 +209,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f8f49e14-35b1-4d93-9544-eb05541cf6f5
     m_ActionName: Player/Fire[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 5bff2fff-ad94-4ffa-9066-36f342627c9e
-    m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: c1eb70d1-5302-4d6d-befe-55a15c52c040

@@ -25,7 +25,7 @@ public class ThirdPersonShooter : MonoBehaviour
     private static float fireRate = 0.5f;
 
     private float nextFireTime;
-    private bool hasFired;
+    private bool OnFire;
 
     void Start()
     {
@@ -42,22 +42,22 @@ public class ThirdPersonShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    public void Shoot(InputAction.CallbackContext context)
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        hasFired = context.ReadValueAsButton();
-
-        GameObject bullet = Instantiate(bulletPrefab, Muzzle.position, Quaternion.identity);
-        Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
-        bulletRigidbody.velocity = playerCamera.transform.forward * bulletSpeed;
         nextFireTime = Time.time + fireRate;
 
-        audioSource.PlayOneShot(audioSource.clip);
-        particles.Play();
-        animator.SetBool("IsFiring", true);
+        if (OnFire && Time.time >= nextFireTime)
+        {
+            Debug.Log("Weapon Firing");
+            animator.SetBool("IsFiring", true);
+            audioSource.Play();
+            particles.Play();
+            GameObject bullet = Instantiate(bulletPrefab, Muzzle.position, Quaternion.identity);
+            Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+            bulletRigidbody.velocity = playerCamera.transform.forward * bulletSpeed;
+        }
+    }
+
+    public void Fire(InputAction.CallbackContext context)
+    {
+        OnFire = context.ReadValueAsButton();
     }
 }
