@@ -18,6 +18,8 @@ public class ThirdPersonShooter : MonoBehaviour
     private Animator animator;
     private ParticleSystem particles;
     private Transform Muzzle;
+    private InputAction fire;
+    public InputActionMap playerActionMap;
 
     /*public GameObject yourWeapon;*/
 
@@ -25,39 +27,55 @@ public class ThirdPersonShooter : MonoBehaviour
     private static float fireRate = 0.5f;
 
     private float nextFireTime;
-    private bool OnFire;
-
+    private bool hasFired;
+    private void Awake()
+    {
+        fire = playerActionMap.FindAction("Fire");
+    }
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         GameObject weapon = Instantiate(pistol.pistol, weaponPivot);
         Muzzle = weapon.GetComponent<Pistol>().muzzle;
-        particles = weapon.GetComponent<ParticleSystem>();
+        particles = weapon.GetComponent<Pistol>().muzzleFlash;
         audioSource = weapon.GetComponent<AudioSource>();
-        animator = weapon.GetComponent<Animator>();
+        animator = weapon.GetComponent<Pistol>().animator;
+    }
 
+    private void OnEnable()
+    {
+        if (fire != null)
+            fire.Enable();
+    }
+
+    private void OnDisable()
+    {
+        if (fire != null)
+            fire.Disable();
     }
 
     // Update is called once per frame
     void Update()
     {
-        nextFireTime = Time.time + fireRate;
 
-        if (OnFire && Time.time >= nextFireTime)
-        {
-            Debug.Log("Weapon Firing");
-            animator.SetBool("IsFiring", true);
-            audioSource.Play();
-            particles.Play();
-            GameObject bullet = Instantiate(bulletPrefab, Muzzle.position, Quaternion.identity);
-            Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
-            bulletRigidbody.velocity = playerCamera.transform.forward * bulletSpeed;
-        }
     }
 
     public void Fire(InputAction.CallbackContext context)
     {
-        OnFire = context.ReadValueAsButton();
+        Debug.Log("Weapon Firing");
+        hasFired = context.ReadValueAsButton();
+        Shoot();
+    }
+
+    public void Shoot()
+    {
+        animator.SetTrigger("IsFiring");
+        audioSource.Play();
+        particles.Play();
+        GameObject bullet = Instantiate(bulletPrefab, Muzzle.position, Quaternion.identity);
+        Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+        bulletRigidbody.velocity = playerCamera.transform.forward * bulletSpeed;
+
     }
 }

@@ -8,6 +8,6 @@ public class Pistol : MonoBehaviour
     public Transform muzzle; // Pistol Muzzle
     public GameObject millimeterBullets; // 9mm Bullet Prefab
     public Animator animator; // Animator
-    public AudioClip pistolShot; // Pistol Fire Sound
+    private AudioClip pistolShot; // Pistol Fire Sound
     public ParticleSystem muzzleFlash; // Muzzle Flash Particle Effect
 }

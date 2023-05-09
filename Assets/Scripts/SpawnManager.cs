@@ -83,11 +83,12 @@ public class SpawnManager : MonoBehaviour
         {
             StartCoroutine(SpawnWave());
         }
-
+        /*
         if (armatureSpeed > 4)
         { 
             armatureSpeed -= 1; 
         }
+        */
     }
 
     IEnumerator SpawnWave()
@@ -123,7 +124,7 @@ public class SpawnManager : MonoBehaviour
                     j = 1;
                 }
             }
-            armatureSpeed += 1;
+            armatureSpeed += 0.2f;
         }
 
         yield return enemyCount;

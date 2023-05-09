@@ -104,6 +104,12 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5067349677646369789, guid: af9d7fb410bbc8b42a8019e2a3b903b9, type: 3}
   pistol: {fileID: -224346911086221532, guid: b1aa7a3b67727ab488b198befa0dac89, type: 3}
   audioSource: {fileID: 0}
+  playerActionMap:
+    m_Name: 
+    m_Id: 98c707fa-1670-424d-8fa0-3242e23a4621
+    m_Asset: {fileID: 0}
+    m_Actions: []
+    m_Bindings: []
 --- !u!65 &-5832370766769296632
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -195,13 +201,13 @@ MonoBehaviour:
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 573607409048621691}
+      - m_Target: {fileID: -2137332263345531337}
         m_TargetAssemblyTypeName: ThirdPersonShooter, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: Fire
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

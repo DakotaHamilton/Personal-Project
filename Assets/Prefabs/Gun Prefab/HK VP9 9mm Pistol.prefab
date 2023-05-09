@@ -1233,9 +1233,8 @@ MonoBehaviour:
   pistol: {fileID: 8071052617332053415}
   muzzle: {fileID: 3989615475755557139}
   millimeterBullets: {fileID: 5067349677646369789, guid: af9d7fb410bbc8b42a8019e2a3b903b9, type: 3}
-  animator: {fileID: 0}
-  pistolShot: {fileID: 0}
-  muzzleFlash: {fileID: 4583044325046990968}
+  animator: {fileID: 3980500324948400000}
+  muzzleFlash: {fileID: 2725483689791729076, guid: f16fa49cc43dd6842b981cd05d1dc47c, type: 3}
 --- !u!95 &3980500324948400000
 Animator:
   serializedVersion: 3
@@ -1843,7 +1842,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2725483689791729076, guid: f16fa49cc43dd6842b981cd05d1dc47c, type: 3}
       propertyPath: lengthInSec
-      value: 1.02
+      value: 5.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725483689791729076, guid: f16fa49cc43dd6842b981cd05d1dc47c, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2725483689791729076, guid: f16fa49cc43dd6842b981cd05d1dc47c, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
@@ -1855,15 +1858,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9095936251046282828, guid: f16fa49cc43dd6842b981cd05d1dc47c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.000120000004
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 9095936251046282828, guid: f16fa49cc43dd6842b981cd05d1dc47c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.000120000055
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 9095936251046282828, guid: f16fa49cc43dd6842b981cd05d1dc47c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.000010000002
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 9095936251046282828, guid: f16fa49cc43dd6842b981cd05d1dc47c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1910,10 +1913,5 @@ PrefabInstance:
 --- !u!4 &7238308943038370688 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9095936251046282828, guid: f16fa49cc43dd6842b981cd05d1dc47c, type: 3}
-  m_PrefabInstance: {fileID: 1894012621949212108}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &4583044325046990968 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2725483689791729076, guid: f16fa49cc43dd6842b981cd05d1dc47c, type: 3}
   m_PrefabInstance: {fileID: 1894012621949212108}
   m_PrefabAsset: {fileID: 0}

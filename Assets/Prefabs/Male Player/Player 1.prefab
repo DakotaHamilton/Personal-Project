@@ -1190,9 +1190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  playerRb: {fileID: 0}
-  speed: 20
-  rotationSpeed: 200
 --- !u!114 &-2131485006017568762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1210,6 +1207,12 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5067349677646369789, guid: af9d7fb410bbc8b42a8019e2a3b903b9, type: 3}
   pistol: {fileID: -224346911086221532, guid: b1aa7a3b67727ab488b198befa0dac89, type: 3}
   audioSource: {fileID: 0}
+  playerActionMap:
+    m_Name: Player
+    m_Id: 9625f730-07e1-4d57-9576-0cdd9e6b3b26
+    m_Asset: {fileID: 0}
+    m_Actions: []
+    m_Bindings: []
 --- !u!65 &393569625587510915
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1303,7 +1306,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -2131485006017568762}
         m_TargetAssemblyTypeName: ThirdPersonShooter, Assembly-CSharp
-        m_MethodName: Shoot
+        m_MethodName: Fire
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1315,10 +1318,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f8f49e14-35b1-4d93-9544-eb05541cf6f5
     m_ActionName: Player/Fire[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 5bff2fff-ad94-4ffa-9066-36f342627c9e
-    m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: c1eb70d1-5302-4d6d-befe-55a15c52c040
