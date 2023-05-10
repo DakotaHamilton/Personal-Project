@@ -9,8 +9,15 @@ public class DestroyOnCollision : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Destroy(other.gameObject);
+            Destroy(gameObject);
         }
-        else if (other.gameObject.CompareTag("Level"))
+
+        if (other.gameObject.CompareTag("Level"))
+        {
+            Destroy(gameObject);
+        }
+        
+        if (other.gameObject.CompareTag("Bullet"))
         {
             Destroy(gameObject);
         }

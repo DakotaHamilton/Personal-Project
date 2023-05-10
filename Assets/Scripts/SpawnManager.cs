@@ -48,6 +48,7 @@ public class SpawnManager : MonoBehaviour
             player.GetComponent<ThirdPersonShooter>().playerCamera = Camera.main;
         }
         waveCount = 0;
+        armatureSpeed = 1;
 
         //InGame Buttons
 

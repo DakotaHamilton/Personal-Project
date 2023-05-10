@@ -63,19 +63,23 @@ public class ThirdPersonShooter : MonoBehaviour
 
     public void Fire(InputAction.CallbackContext context)
     {
-        Debug.Log("Weapon Firing");
+        //Debug.Log("Weapon Firing");
+
         hasFired = context.ReadValueAsButton();
         Shoot();
     }
 
     public void Shoot()
     {
-        animator.SetTrigger("IsFiring");
-        audioSource.Play();
-        particles.Play();
-        GameObject bullet = Instantiate(bulletPrefab, Muzzle.position, Quaternion.identity);
-        Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
-        bulletRigidbody.velocity = playerCamera.transform.forward * bulletSpeed;
-
+        if (hasFired && Time.time >= nextFireTime)
+        {
+            nextFireTime = Time.time + fireRate;
+            animator.SetTrigger("IsFiring");
+            audioSource.Play();
+            GameObject bullet = Instantiate(bulletPrefab, Muzzle.position, Quaternion.identity);
+            Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+            bulletRigidbody.velocity = playerCamera.transform.forward * bulletSpeed;
+        }
+        
     }
 }

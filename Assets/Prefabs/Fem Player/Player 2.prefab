@@ -105,7 +105,7 @@ MonoBehaviour:
   pistol: {fileID: -224346911086221532, guid: b1aa7a3b67727ab488b198befa0dac89, type: 3}
   audioSource: {fileID: 0}
   playerActionMap:
-    m_Name: 
+    m_Name: Player
     m_Id: 98c707fa-1670-424d-8fa0-3242e23a4621
     m_Asset: {fileID: 0}
     m_Actions: []

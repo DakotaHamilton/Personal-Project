@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     private float horizontal2; // Mouse and Touch
     private float vertical; // Forward and Backward
     private float speed = 3.0f; // Movement Speed
-    private float rotationSpeed = 50f; // Look Left and Right Speed
+    private float rotationSpeed = 100f; // Look Left and Right Speed
     private float gravityValue = -9.81f; // Gravity Value
 
     // Start is called before the first frame update
