@@ -4,6 +4,7 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -25,10 +26,14 @@ public class SpawnManager : MonoBehaviour
     public Transform spawner3;
     public Transform spawner4;
     [Space]
-    
+
+    public GameObject pauseMenu;
     public GameObject GameOver;
-    public Button RetryButton;
-    public Button MainMenuButton;
+    public GameObject crossHair;
+    public GameObject _retryButton;
+    public GameObject _mainMenuButton;
+    public Button retryButton;
+    public Button mainMenuButton;
     
 
 
@@ -50,16 +55,18 @@ public class SpawnManager : MonoBehaviour
         waveCount = 0;
         armatureSpeed = 1;
 
-        //InGame Buttons
 
-        RetryButton.onClick.AddListener(Retry);
-        MainMenuButton.onClick.AddListener(ReturnToMainMenu);
+    //InGame Buttons
+
+    retryButton.onClick.AddListener(Retry);
+        mainMenuButton.onClick.AddListener(ReturnToMainMenu);
     }
 
     // InGame Buttons Function
     public void Retry()
     {
         SceneManager.LoadScene(1);
+        
     }
 
     public void ReturnToMainMenu()
@@ -67,9 +74,22 @@ public class SpawnManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void Pause()
+    {
+        pauseMenu.SetActive(true);
+        crossHair.SetActive(false);
+        _retryButton.SetActive(true);
+        _mainMenuButton.SetActive(true);
+        Time.timeScale = 0;
+    }
+
     public void OnDeath()
     {
         GameOver.SetActive(true);
+        crossHair.SetActive(false);
+        _retryButton.SetActive(true);
+        _mainMenuButton.SetActive(true);
+        retryButton.Select();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }

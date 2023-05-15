@@ -13,9 +13,11 @@ using UnityEditor;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public EventSystem eventSystem;
 
     public Button maleButton;
     public Button femaleButton;
+    public Button defaultButton;
     [Space]
     public Button subMainButton;
     public Button subMainBackButton;
@@ -79,6 +81,7 @@ public class GameManager : MonoBehaviour
 
         maleButton.onClick.AddListener(MaleStart);
         femaleButton.onClick.AddListener(FemaleStart);
+        defaultButton.onClick.AddListener(FemaleStart);
 
         subMainButton.onClick.AddListener(SubMain);
         subMainBackButton.onClick.AddListener(MainMenu);
@@ -87,11 +90,13 @@ public class GameManager : MonoBehaviour
         settingsBackButton.onClick.AddListener(MainMenu);
 
         lockerButton.onClick.AddListener(Locker);
+
         /*
         pistolButton.onClick.AddListener(Pistol);
         shotgunButton.onClick.AddListener(Shotgun);
         assaultRifleButton.onClick.AddListener(AssaultRifle);
         */
+
         lockerBackButton.onClick.AddListener(MainMenu);
 
         creditsButton.onClick.AddListener(Credits);
@@ -114,14 +119,14 @@ public class GameManager : MonoBehaviour
         settings.SetActive(false);
         locker.SetActive(false);
         credits.SetActive(false);
+        subMainButton.Select();
     }
 
     public void SubMain()
     {
         mainMenu.SetActive(false);
         subMainMenu.SetActive(true);
-        settings.SetActive(false);
-        locker.SetActive(false);
+        defaultButton.Select();
     }
 
     public void MaleStart()
@@ -141,26 +146,21 @@ public class GameManager : MonoBehaviour
     public void Settings()
     {
         mainMenu.SetActive(false);
-        subMainMenu.SetActive(false);
         settings.SetActive(true);
-        locker.SetActive(false);
+        musicSlider.Select();
     }
 
     public void Locker()
     {
         mainMenu.SetActive(false);
-        subMainMenu.SetActive(false);
-        settings.SetActive(false);
         locker.SetActive(true);
     }
 
     public void Credits()
     {
         mainMenu.SetActive(false);
-        subMainMenu.SetActive(false);
-        settings.SetActive(false);
-        locker.SetActive(false);
         credits.SetActive(true);
+        creditsBackButton.Select();
     }
 
     /*

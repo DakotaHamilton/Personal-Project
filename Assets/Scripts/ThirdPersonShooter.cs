@@ -15,10 +15,12 @@ public class ThirdPersonShooter : MonoBehaviour
     private Shotgun shotgun; // Shotgun
     public AudioSource audioSource; // Audio Source
     private readonly GameManager gameManager;
+    private SpawnManager spawnManager;
     private Animator animator;
     private ParticleSystem particles;
     private Transform Muzzle;
     private InputAction fire;
+    private InputAction pause;
     public InputActionMap playerActionMap;
 
     /*public GameObject yourWeapon;*/
@@ -28,9 +30,11 @@ public class ThirdPersonShooter : MonoBehaviour
 
     private float nextFireTime;
     private bool hasFired;
+    private bool isPaused;
     private void Awake()
     {
         fire = playerActionMap.FindAction("Fire");
+        pause = playerActionMap.FindAction("Pause");
     }
     void Start()
     {
@@ -38,7 +42,7 @@ public class ThirdPersonShooter : MonoBehaviour
         Cursor.visible = false;
         GameObject weapon = Instantiate(pistol.pistol, weaponPivot);
         Muzzle = weapon.GetComponent<Pistol>().muzzle;
-        particles = weapon.GetComponent<Pistol>().muzzleFlash;
+        //particles = weapon.GetComponent<Pistol>().muzzleFlash;
         audioSource = weapon.GetComponent<AudioSource>();
         animator = weapon.GetComponent<Pistol>().animator;
     }
@@ -81,5 +85,19 @@ public class ThirdPersonShooter : MonoBehaviour
             bulletRigidbody.velocity = playerCamera.transform.forward * bulletSpeed;
         }
         
+    }
+
+    public void Pause(InputAction.CallbackContext context)
+    {
+        isPaused = context.ReadValueAsButton();
+        Paused();
+    }
+
+    public void Paused()
+    {
+        if (isPaused)
+        {
+            spawnManager.Pause();
+        }
     }
 }
