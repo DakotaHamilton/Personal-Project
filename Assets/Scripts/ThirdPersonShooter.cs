@@ -26,7 +26,7 @@ public class ThirdPersonShooter : MonoBehaviour
     /*public GameObject yourWeapon;*/
 
     private readonly float bulletSpeed = 50;
-    private static float fireRate = 0.5f;
+    private float fireRate = 0.5f;
 
     private float nextFireTime;
     private bool hasFired;
@@ -35,6 +35,7 @@ public class ThirdPersonShooter : MonoBehaviour
     {
         fire = playerActionMap.FindAction("Fire");
         pause = playerActionMap.FindAction("Pause");
+        spawnManager = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
     }
     void Start()
     {
@@ -89,15 +90,19 @@ public class ThirdPersonShooter : MonoBehaviour
 
     public void Pause(InputAction.CallbackContext context)
     {
-        isPaused = context.ReadValueAsButton();
         Paused();
     }
 
     public void Paused()
     {
+        isPaused = !isPaused;
         if (isPaused)
         {
             spawnManager.Pause();
+        }
+        else if(isPaused == false)
+        {
+            spawnManager.UnPause();
         }
     }
 }

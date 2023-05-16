@@ -58,7 +58,7 @@ public class SpawnManager : MonoBehaviour
 
     //InGame Buttons
 
-    retryButton.onClick.AddListener(Retry);
+        retryButton.onClick.AddListener(Retry);
         mainMenuButton.onClick.AddListener(ReturnToMainMenu);
     }
 
@@ -71,6 +71,8 @@ public class SpawnManager : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         SceneManager.LoadScene(0);
     }
 
@@ -80,7 +82,21 @@ public class SpawnManager : MonoBehaviour
         crossHair.SetActive(false);
         _retryButton.SetActive(true);
         _mainMenuButton.SetActive(true);
+        retryButton.Select();
         Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void UnPause()
+    {
+        pauseMenu.SetActive(false);
+        crossHair.SetActive(true);
+        _retryButton.SetActive(false);
+        _mainMenuButton.SetActive(false);
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void OnDeath()

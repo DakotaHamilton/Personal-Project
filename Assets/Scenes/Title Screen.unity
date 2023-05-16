@@ -275,12 +275,9 @@ MonoBehaviour:
   musicVolume: 0
   mainMenu: {fileID: 1158378222}
   subMainMenu: {fileID: 975039945}
-  _subMainButton: {fileID: 0}
   settings: {fileID: 445693380}
-  _settingsButton: {fileID: 0}
   locker: {fileID: 661615595}
   credits: {fileID: 791901534}
-  _creditsButton: {fileID: 0}
   IsGameActive: 0
   AvailableWeapons: []
   AvailableAmmunitions: []
@@ -808,7 +805,8 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2137332263345531337, guid: e32eead756cc013458b6a4c96fc5e4d8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e32eead756cc013458b6a4c96fc5e4d8, type: 3}
 --- !u!4 &112915127 stripped
 Transform:
@@ -6384,6 +6382,10 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6835387289254876713, guid: 0d9077a83182d8841af2edde01f863a0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7827341457650451030, guid: 0d9077a83182d8841af2edde01f863a0, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6432,7 +6434,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2131485006017568762, guid: 0d9077a83182d8841af2edde01f863a0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0d9077a83182d8841af2edde01f863a0, type: 3}
 --- !u!4 &1592612090 stripped
 Transform:
@@ -7494,7 +7497,8 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2137332263345531337, guid: e32eead756cc013458b6a4c96fc5e4d8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e32eead756cc013458b6a4c96fc5e4d8, type: 3}
 --- !u!4 &1935105090 stripped
 Transform:

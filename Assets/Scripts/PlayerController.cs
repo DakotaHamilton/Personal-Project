@@ -43,8 +43,8 @@ public class PlayerController : MonoBehaviour
     {
         horizontal = context.ReadValue<Vector2>().x;
         vertical = context.ReadValue<Vector2>().y;
-
-        anim.SetFloat("Speed", (float)Mathf.Abs (vertical + horizontal)); // Forward and Back // Right and Left
+        Debug.Log((float)Mathf.Abs(vertical) + (float)Mathf.Abs(horizontal));
+        anim.SetFloat("Speed", (float)Mathf.Abs(vertical) + (float)Mathf.Abs(horizontal)); // Forward and Back // Right and Left
     }
 
     public void Look(InputAction.CallbackContext context)

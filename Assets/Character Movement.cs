@@ -288,7 +288,7 @@ public partial class @CharacterMovement : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""3de2f9bd-9935-4266-9b03-efa8ace107a9"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
