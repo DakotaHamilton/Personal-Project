@@ -13,6 +13,7 @@ public class SpawnManager : MonoBehaviour
     private readonly GameManager gameManager;
     private ThirdPersonShooter thirdPersonShooter;
     public int waveCount;
+    public StarterAssets.UICanvasControllerInput uiInput;
 
     public float armatureSpeed;
     public GameObject enemyPrefab;
@@ -51,7 +52,10 @@ public class SpawnManager : MonoBehaviour
             GameObject player = Instantiate(femalePrefab, playerSpawn);
             playerCamera.Follow = player.transform;
             player.GetComponent<ThirdPersonShooter>().playerCamera = Camera.main;
+            uiInput.starterAssetsInputs = player.GetComponent<PlayerController>();
+            uiInput.thirdPersonShooterInputs = player.GetComponent<ThirdPersonShooter>();
         }
+        
         waveCount = 0;
         armatureSpeed = 1;
 

@@ -10,26 +10,25 @@ namespace StarterAssets
         public PlayerController starterAssetsInputs;
         public ThirdPersonShooter thirdPersonShooterInputs;
 
-        public void VirtualMoveInput(InputAction.CallbackContext context)
+        public void VirtualMoveInput(Vector2 context)
         {
-            starterAssetsInputs.Move(context);
+            starterAssetsInputs.MoveInput(context);
         }
 
-        public void VirtualLookInput(InputAction.CallbackContext context)
+        public void VirtualLookInput(Vector2 context)
         {
-            starterAssetsInputs.Look(context);
+            starterAssetsInputs.LookInput(context);
         }
 
-        public void VirtualShootInput(InputAction.CallbackContext context)
+        public void VirtualShootInput(bool input)
         {
-            thirdPersonShooterInputs.Fire(context);
+            thirdPersonShooterInputs.FireInput(input);
         }
-        /*
-        public void VirtualSprintInput(bool virtualSprintState)
+
+        public void VirtualPauseInput(bool input)
         {
-            starterAssetsInputs.SprintInput(virtualSprintState);
+            thirdPersonShooterInputs.PauseInput(input);
         }
-        */
         
     }
 

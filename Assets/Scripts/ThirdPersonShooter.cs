@@ -74,6 +74,12 @@ public class ThirdPersonShooter : MonoBehaviour
         Shoot();
     }
 
+    public void FireInput(bool input)
+    {
+        hasFired = input;
+        Shoot();
+    }
+
     public void Shoot()
     {
         if (hasFired && Time.time >= nextFireTime)
@@ -89,6 +95,11 @@ public class ThirdPersonShooter : MonoBehaviour
     }
 
     public void Pause(InputAction.CallbackContext context)
+    {
+        Paused();
+    }
+
+    public void PauseInput(bool input)
     {
         Paused();
     }
