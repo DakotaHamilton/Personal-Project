@@ -46,6 +46,8 @@ public class SpawnManager : MonoBehaviour
             GameObject player = Instantiate(malePrefab, playerSpawn);
             playerCamera.Follow = player.transform;
             player.GetComponent<ThirdPersonShooter>().playerCamera = Camera.main;
+            uiInput.starterAssetsInputs = player.GetComponent<PlayerController>();
+            uiInput.thirdPersonShooterInputs = player.GetComponent<ThirdPersonShooter>();
         }
         if (isMale == false)
         {

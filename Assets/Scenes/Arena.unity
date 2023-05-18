@@ -3674,6 +3674,7 @@ MonoBehaviour:
   enemyCount: 0
   waveCounter: {fileID: 1160218752}
   waveCount: 0
+  uiInput: {fileID: 737503525}
   armatureSpeed: 0
   enemyPrefab: {fileID: 6403813802735193966, guid: c8ae082fcbaebb84a8974dd57bf1f924, type: 3}
   malePrefab: {fileID: 7879344584342265017, guid: 0d9077a83182d8841af2edde01f863a0, type: 3}
